@@ -2,14 +2,18 @@ package lab9;
 
 public abstract class Fabrica {
 
-	protected abstract void fazerMassa();
+	Cobertura cobertura;
 
-	protected abstract void fazerCobertura();
+	public Fabrica(Cobertura cobertura) {
+		this.cobertura = cobertura;
+	}
+
+	protected abstract void fazerMassa();
 
 	protected void prepararBolo() {
 		fazerMassa();
 		levarAoForno();
-		fazerCobertura();
+		cobertura.fazerCobertura();
 		decorarBolo();
 	}
 
